@@ -18,6 +18,8 @@ CREATE TABLE `team` (
 	CONSTRAINT pk_stu_student_id PRIMARY KEY(`team_id`)	
 );
 
+ALTER TABLE team AUTO_INCREMENT=5001;
+
 CREATE TABLE `student_event_affiliation` (
 	`student_id` int(4) NOT NULL,
 	`event_id` int(2) NOT NULL,
@@ -49,14 +51,21 @@ CREATE TABLE `student_team_affiliation` (
 );
 
 CREATE TABLE `egg_drop_report` (
-	`record_id` int(4) NOT NULL AUTO_INCREMENT,,
-	`team_id` int(4) NOT NULL,
+	`record_id` int(4) NOT NULL AUTO_INCREMENT,
+	`participant_id` int(4) NOT NULL,
 	`student_names` text NOT NULL,
 	`school` text NOT NULL,
 	`number_of_team_members` int(2) NOT NULL,
 	`grade_group` text NOT NULL,
-	`survive` tinyint(1),
-	-- lack of data sample to determine data constraint
+	`survive` text NOT NULL,
+	`measured_dist` decimal(6,2),
+	`allowed_time` text NOT NULL,
+	`start_time` text NOT NULL,
+	`end_time` text NOT NULL,
+	`total_time` text NOT NULL,
+	`penalty_dist` decimal(6,2),
+	`total_dist` decimal(6,2),
+
 	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)	
 );
 
@@ -103,6 +112,22 @@ INSERT INTO team (name) VALUES
 INSERT INTO student_team_affiliation (team_id,student_id) VALUES
 (1,1),(1,2),(1,3),(2,35),(2,36);
 
+INSERT INTO `egg_drop_report` (
+	`participant_id`,
+	`student_names`,
+	`school`,
+	`number_of_team_members`,
+	`grade_group`,
+	`survive`,
+	`measured_dist`,
+	`allowed_time`,
+	`start_time`,
+	`end_time`,
+	`total_time`,
+	`penalty_dist`,
+	`total_dist`) VALUES
+(9999,'Aaron9999', 'Service high','Yes','9 ot 12',1,13.75,'40','10:30','10:42','0:12',0,13.75);
+
 INSERT INTO `lego_longo_report` (
 	`participant_id`,
 	`student_names`,
@@ -116,6 +141,7 @@ INSERT INTO `lego_longo_report` (
 (2,'Aaron2', 'Service high','12'),
 (3,'Aaron3', 'Service high','12');
 
+DELETE FROM `eweek`.`egg_drop_report` WHERE `record_id`='1';
 --insert from another table
 INSERT INTO `student` (`name`, `school`, `grade`)
 SELECT *
@@ -134,6 +160,7 @@ DELETE *
 FROM student
 WHERE student_id = 1; --shall use pk
 
+Truncate table student; -- resets auto id
 --Alter--
 ALTER TABLE student
 ADD age int(2);	--add `age` field

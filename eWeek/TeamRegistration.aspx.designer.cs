@@ -10,51 +10,42 @@
 namespace ASPWenFormPractice1 {
     
     
-    public partial class _Default {
+    public partial class Team_Registration {
         
         /// <summary>
-        /// TxtName control.
+        /// TextTeamName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtName;
+        protected global::System.Web.UI.WebControls.TextBox TextTeamName;
         
         /// <summary>
-        /// TxtSchool control.
+        /// TextTeamMembers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtSchool;
+        protected global::System.Web.UI.WebControls.TextBox TextTeamMembers;
         
         /// <summary>
-        /// TxtGrade control.
+        /// Button_team_reg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TxtGrade;
+        protected global::System.Web.UI.WebControls.Button Button_team_reg;
         
         /// <summary>
-        /// Button_student_reg control.
+        /// Label_team_reg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_student_reg;
-        
-        /// <summary>
-        /// Label_student_reg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_student_reg;
+        protected global::System.Web.UI.WebControls.Label Label_team_reg;
     }
 }

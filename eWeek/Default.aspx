@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Event Registration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ASPWenFormPractice1._Default" %>
+﻿<%@ Page Title="Student Registration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ASPWenFormPractice1._Default" %>
 
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
     <section class="featured">
@@ -7,9 +7,10 @@
                 <h1><%: Title %>.</h1>
             </hgroup>
             <p>
-               This is registration page for each individual student and for each team.<br />
-               Each student and team will get their unique ID after registeration, 
+               This is registration page for each individual student.<br />
+               Each student will get their unique ID after registeration, 
                 which will be used later for their participation in the events. <br />
+                For team registration, go to team registration page.
             </p>
         </div>
     </section>
@@ -35,10 +36,10 @@
                 <td>
                     <%--<asp:TextBox ID="TxtGrade" runat="server"></asp:TextBox>--%>
                     <asp:DropDownList ID="TxtGrade" runat="server">
-                    <asp:ListItem Text="1 to 3" Value="0"></asp:ListItem>
-                    <asp:ListItem Text="4 to 6" Value="1"></asp:ListItem>
-                    <asp:ListItem Text="7 to 8" Value="2"></asp:ListItem>
-                    <asp:ListItem Text="9 to 12" Value="3"></asp:ListItem>
+                    <asp:ListItem Text="1 to 3" Value="1 to 3"></asp:ListItem>
+                    <asp:ListItem Text="4 to 6" Value="4 to 6"></asp:ListItem>
+                    <asp:ListItem Text="7 to 8" Value="7 to 8"></asp:ListItem>
+                    <asp:ListItem Text="9 to 12" Value="9 to 12"></asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -48,7 +49,7 @@
                              onclick="Button_Student_reg" />
         <asp:Label ID="Label_student_reg" runat="server" Text="Register as an individual"></asp:Label>
 
-    <br />
+    <%--<br />
     <br />
     <br />
 
@@ -71,7 +72,7 @@
  
     <asp:Button ID="Button_team_reg" runat="server" Text="Register" 
                              onclick="Button_Team_reg" />
-        <asp:Label ID="Label_team_reg" runat="server" Text="Register as a team"></asp:Label>
+        <asp:Label ID="Label_team_reg" runat="server" Text="Register as a team"></asp:Label>--%>
 
     
     <br />
