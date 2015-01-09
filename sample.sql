@@ -2,7 +2,7 @@ CREATE TABLE `student` (
 	`student_id` int(4) NOT NULL AUTO_INCREMENT,
 	`name` text NOT NULL,
 	`school` text NOT NULL,
-	`grade` int(2) NOT NULL, 	
+	`grade` text NOT NULL, 	
 	CONSTRAINT pk_stu_student_id PRIMARY KEY(`student_id`)	
 );
 
@@ -54,7 +54,7 @@ CREATE TABLE `egg_drop_report` (
 	`student_names` text NOT NULL,
 	`school` text NOT NULL,
 	`number_of_team_members` int(2) NOT NULL,
-	`grade_group` char(8) NOT NULL,
+	`grade_group` text NOT NULL,
 	`survive` tinyint(1),
 	-- lack of data sample to determine data constraint
 	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)	
@@ -65,7 +65,7 @@ CREATE TABLE `lego_longo_report` (
 	`participant_id` int(4) NOT NULL,
 	`student_names` text NOT NULL,
 	`school` text NOT NULL,
-	`grade_group` char(8) NOT NULL,
+	`grade_group` text NOT NULL,
 	`length` decimal(6,3),
 	`weight` decimal(6,1),
 	`survive` tinyint(1),

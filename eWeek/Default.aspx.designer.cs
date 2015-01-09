@@ -37,7 +37,7 @@ namespace ASPWenFormPractice1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtGrade;
+        protected global::System.Web.UI.WebControls.DropDownList TxtGrade;
         
         /// <summary>
         /// Button_student_reg control.

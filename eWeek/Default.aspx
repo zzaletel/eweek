@@ -33,7 +33,13 @@
             <tr>
                 <td>*Grade:</td>
                 <td>
-                    <asp:TextBox ID="TxtGrade" runat="server"></asp:TextBox>
+                    <%--<asp:TextBox ID="TxtGrade" runat="server"></asp:TextBox>--%>
+                    <asp:DropDownList ID="TxtGrade" runat="server">
+                    <asp:ListItem Text="1 to 3" Value="0"></asp:ListItem>
+                    <asp:ListItem Text="4 to 6" Value="1"></asp:ListItem>
+                    <asp:ListItem Text="7 to 8" Value="2"></asp:ListItem>
+                    <asp:ListItem Text="9 to 12" Value="3"></asp:ListItem>
+                    </asp:DropDownList>
                 </td>
             </tr>
         </table>

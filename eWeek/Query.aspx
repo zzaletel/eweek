@@ -74,4 +74,6 @@ student_team_affiliation as sta
 WHERE t.team_id = sta.team_id
 AND sta.student_id = s.student_id;"></asp:SqlDataSource>
 
+    <asp:Button ID="ButtonExport" runat="server" Text="Export To Excel" onclick="ExportToExcel"/>
+
 </asp:Content>
