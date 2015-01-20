@@ -14,7 +14,10 @@ CREATE TABLE `event` (
 
 CREATE TABLE `team` (
 	`team_id` int(4) NOT NULL AUTO_INCREMENT,
-	`name` text NOT NULL,		
+	`name` text NOT NULL,
+	`member_names` text NOT NULL,
+	`team_size` int(2) NOT NULL,
+	`representative_id` int(4) NOT NULL,
 	CONSTRAINT pk_stu_student_id PRIMARY KEY(`team_id`)	
 );
 

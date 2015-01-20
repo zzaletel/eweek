@@ -4,6 +4,39 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+
+    <h2>Event Report Tables (click each event to export report in Excel sheet)</h2>
+    <ul>
+        <li><a id="A1" runat="server" href="~/EggDropReport">Egg drop - team or individual</a></li>
+        <li><a id="A2" runat="server" href="~/FloatableMoatables">Floatable moatables- team (up to 4 people)</a></li>
+        <li><a id="A3" runat="server" href="~/PaperAirplanes">Paper airplanes - individual</a></li>
+        <li><a id="A4" runat="server" href="~/EggToss">Egg toss - team or individual</a></li>
+        <li><a id="A5" runat="server" href="~/LegoLongo">Lego longo - team or individual</a></li>
+        <li><a id="A6" runat="server" href="~/ShakeBreak">Shake & Break - team or individual</a></li>
+        <li><a id="A7" runat="server" href="~/BridgeBuster">Bridge buster - individual</a></li>
+    </ul>
+
+    <h2>Other Tables</h2>
+    <ul>
+        <li><a id="A8" runat="server" href="~/EggDrop">Student</a></li>
+        <li><a id="A9" runat="server" href="~/FloatableMoatables">Team</a></li>
+        <li><a id="A10" runat="server" href="~/PaperAirplanes">Team-Student</a></li>
+    </ul>
+
+    <h3>Edit Table</h3>
+    <ul>
+        <li><a id="A11" runat="server" href="~/EggDrop">Egg drop - team or individual</a></li>
+        <li><a id="A12" runat="server" href="~/FloatableMoatables">Floatable moatables- team (up to 4 people)</a></li>
+        <li><a id="A13" runat="server" href="~/PaperAirplanes">Paper airplanes - individual</a></li>
+        <li><a id="A14" runat="server" href="~/EggToss">Egg toss - team or individual</a></li>
+        <li><a id="A15" runat="server" href="~/LegoLongo">Lego longo - team or individual</a></li>
+        <li><a id="A16" runat="server" href="~/ShakeBreak">Shake & Break - team or individual</a></li>
+        <li><a id="A17" runat="server" href="~/BridgeBuster">Bridge buster - individual</a></li>
+        <li><a id="A18" runat="server" href="~/EggDrop">Student</a></li>
+        <li><a id="A19" runat="server" href="~/FloatableMoatables">Team</a></li>
+        <li><a id="A20" runat="server" href="~/PaperAirplanes">Team-Student</a></li>
+    </ul>
+
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="student_id" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
@@ -29,8 +62,11 @@
     <asp:GridView ID="GridView3" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="team_id" DataSourceID="SqlDataSource3" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
-            <asp:BoundField DataField="team_id" HeaderText="Team Id" InsertVisible="False" ReadOnly="True" SortExpression="team_id" />
-            <asp:BoundField DataField="name" HeaderText="Team Name" SortExpression="name" />
+            <asp:BoundField DataField="team_id" HeaderText="team_id" InsertVisible="False" ReadOnly="True" SortExpression="team_id" />
+            <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+            <asp:BoundField DataField="member_names" HeaderText="member_names" SortExpression="member_names" />
+            <asp:BoundField DataField="team_size" HeaderText="team_size" SortExpression="team_size" />
+            <asp:BoundField DataField="representative_id" HeaderText="representative_id" SortExpression="representative_id" />
         </Columns>
         <EditRowStyle BackColor="#999999" />
         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

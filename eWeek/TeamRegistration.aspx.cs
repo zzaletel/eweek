@@ -23,17 +23,40 @@ namespace ASPWenFormPractice1
                 {
                     MySqlConnection mySqlConnection = new MySqlConnection(GetConnectionString());
 
-                    string teamSqlQuery = "INSERT INTO team (name) VALUES " +
-                       "('" + this.TextTeamName.Text + "');";
-
                     string staSql = "INSERT INTO student_team_affiliation (team_id,student_id) VALUES ";
 
+                    string getStudentNameSqlPre = "select name from student where student_id =";
                     string getIdQ = "SELECT LAST_INSERT_ID();";
                     string id = "";
 
-                    MySqlCommand Command = new MySqlCommand(teamSqlQuery, mySqlConnection);
+                    string TeamMembers = this.TextTeamMembers.Text;
+                    string[] words = TeamMembers.Split(',');
+                    string allNames = "";
+                    string getStudentNameSql = "";
+                    int teamSize = words.Length;
+                    int teamRep = Int32.Parse(words[0]);
+
+                    MySqlCommand Command;
                     MySqlDataReader mySqlDataReader;
                     mySqlConnection.Open();
+
+                    foreach (string s in words) //insert members to new team
+                    {
+                        getStudentNameSql = getStudentNameSqlPre + Int32.Parse(s) + ";";
+                        Command = new MySqlCommand(getStudentNameSql, mySqlConnection);
+                        mySqlDataReader = Command.ExecuteReader();
+                        while (mySqlDataReader.Read())
+                        {
+                            allNames += mySqlDataReader.GetString(0)+", ";  //get student name
+                        }
+                        mySqlDataReader.Close();
+                    }
+
+                    string teamSqlQuery = "INSERT INTO team (name, member_names, team_size, representative_id) VALUES " +
+                       "('" + this.TextTeamName.Text + "','" + allNames + "','" + teamSize + "','"
+                       + teamRep + "');";
+
+                    Command = new MySqlCommand(teamSqlQuery, mySqlConnection);        
                     mySqlDataReader = Command.ExecuteReader();
 
                     while (mySqlDataReader.Read())
@@ -50,11 +73,10 @@ namespace ASPWenFormPractice1
                     }
                     mySqlDataReader.Close();
 
-                    string text = this.TextTeamMembers.Text;
-                    string[] words = text.Split(',');
 
                     foreach (string s in words) //insert members to new team
                     {
+                        getStudentNameSql += Int32.Parse(s) + ";";
                         Command = new MySqlCommand(staSql + "('" + id + "','" + s + "');", mySqlConnection);
                         mySqlDataReader = Command.ExecuteReader();
                         mySqlDataReader.Close();

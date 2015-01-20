@@ -27,4 +27,35 @@
                              onclick="Button_Team_reg" />
         <asp:Label ID="Label_team_reg" runat="server" Text="Register as a team"></asp:Label>
 
+    <h3>Events:</h3>
+    <ol class="round">
+        <li class="one">
+            Egg drop - team or individual
+            <br /><br />
+        </li>
+        <li class="two">
+            Floatable moatables- team (up to 4 people)
+            <br /><br />
+        </li>
+        <li class="three">
+            Paper airplanes - individual*
+            <br /><br />
+        </li>
+        <li class="four">
+            Egg toss - team or individual
+            <br /><br />
+        </li>
+        <li class="five">
+            Lego longo - team or individual
+            <br /><br />
+        </li>
+        <li class="six">
+            Shake & Break - team or individual
+            <br /><br />
+        </li>
+        <li class="seven">
+            Bridge buster - individual*
+            <br /><br />
+        </li>
+    </ol>
 </asp:Content>

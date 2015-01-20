@@ -139,6 +139,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="BridgeBuster.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -195,6 +196,10 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="EggDrop.aspx" />
+    <Content Include="EggDropReport.aspx" />
+    <Content Include="EggToss.aspx" />
+    <Content Include="FloatableMoatables.aspx" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
@@ -211,9 +216,11 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="LegoLongo.aspx" />
     <Content Include="packages.config" />
     <Content Include="Events.aspx" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="PaperAirplanes.aspx" />
     <Content Include="Query.aspx" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -241,6 +248,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="ShakeBreak.aspx" />
     <Content Include="TeamRegistration.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -302,6 +310,13 @@
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BridgeBuster.aspx.cs">
+      <DependentUpon>BridgeBuster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BridgeBuster.aspx.designer.cs">
+      <DependentUpon>BridgeBuster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -317,8 +332,50 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EggDrop.aspx.cs">
+      <DependentUpon>EggDrop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EggDrop.aspx.designer.cs">
+      <DependentUpon>EggDrop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EggDropReport.aspx.cs">
+      <DependentUpon>EggDropReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EggDropReport.aspx.designer.cs">
+      <DependentUpon>EggDropReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EggToss.aspx.cs">
+      <DependentUpon>EggToss.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EggToss.aspx.designer.cs">
+      <DependentUpon>EggToss.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FloatableMoatables.aspx.cs">
+      <DependentUpon>FloatableMoatables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FloatableMoatables.aspx.designer.cs">
+      <DependentUpon>FloatableMoatables.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LegoLongo.aspx.cs">
+      <DependentUpon>LegoLongo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LegoLongo.aspx.designer.cs">
+      <DependentUpon>LegoLongo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaperAirplanes.aspx.cs">
+      <DependentUpon>PaperAirplanes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaperAirplanes.aspx.designer.cs">
+      <DependentUpon>PaperAirplanes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query.aspx.cs">
@@ -327,6 +384,13 @@
     </Compile>
     <Compile Include="Query.aspx.designer.cs">
       <DependentUpon>Query.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShakeBreak.aspx.cs">
+      <DependentUpon>ShakeBreak.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShakeBreak.aspx.designer.cs">
+      <DependentUpon>ShakeBreak.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
