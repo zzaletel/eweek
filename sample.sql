@@ -78,12 +78,52 @@ CREATE TABLE `lego_longo_report` (
 	`student_names` text NOT NULL,
 	`school` text NOT NULL,
 	`grade_group` text NOT NULL,
-	`length` decimal(6,3),
-	`weight` decimal(6,1),
-	`survive` tinyint(1),
+	`length1` decimal(6,3),
+	`weight1` decimal(6,2),
+	`survive1` text NOT NULL,
+	`length2` decimal(6,3),
+	`weight2` decimal(6,2),
+	`survive2` text NOT NULL,
 	`max_distance` decimal(6,3),
 	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
 );
+
+CREATE TABLE `shake_and_break_report` (
+	`record_id` int(4) NOT NULL AUTO_INCREMENT,
+	`participant_id` int(4) NOT NULL,
+	`student_names` text NOT NULL,
+	`school` text NOT NULL,
+	`grade_group` text NOT NULL,
+	`survival_time` decimal(6,2),
+	`stories_num` decimal(6,2),
+	`total_points` decimal(6,2),
+	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
+);
+
+CREATE TABLE `floatable_moatable_report` (
+	`record_id` int(4) NOT NULL AUTO_INCREMENT,
+	`participant_id` int(4) NOT NULL,
+	`student_names` text NOT NULL,
+	`school` text NOT NULL,
+	`grade_group` text NOT NULL,
+	`marbles_num int(5),
+	`people_num` int(2),
+	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
+);
+
+CREATE TABLE `egg_toss_report` (
+	`record_id` int(4) NOT NULL AUTO_INCREMENT,
+	`participant_id` int(4) NOT NULL,
+	`student_names` text NOT NULL,
+	`school` text NOT NULL,
+	`grade_group` text NOT NULL,
+	`dist_from_target` decimal(6,2),
+	`construt_time` text NOT NULL,
+	`total_points` decimal(6,2),
+	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
+);
+
+
 
 --Query--
 SELECT t.team_id, t.name, sta.student_id, s.name, s.school, s.grade
