@@ -32,7 +32,7 @@
         </tr>
 
         <tr>
-            <td><asp:Label ID="Label4" runat="server" Text="First Attempt2:"></asp:Label></td>
+            <td><asp:Label ID="Label4" runat="server" Text="Second Attempt:"></asp:Label></td>
         </tr>
         <tr>
             <td><asp:Label ID="Label5" runat="server" Text="Length (in)"></asp:Label></td>

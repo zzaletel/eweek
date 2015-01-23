@@ -106,7 +106,7 @@ CREATE TABLE `floatable_moatable_report` (
 	`student_names` text NOT NULL,
 	`school` text NOT NULL,
 	`grade_group` text NOT NULL,
-	`marbles_num int(5),
+	`marbles_num` int(5),
 	`people_num` int(2),
 	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
 );
@@ -123,7 +123,26 @@ CREATE TABLE `egg_toss_report` (
 	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
 );
 
-
+CREATE TABLE `paper_airplanes_report` (
+	`record_id` int(4) NOT NULL AUTO_INCREMENT,
+	`participant_id` int(4) NOT NULL,
+	`student_names` text NOT NULL,
+	`school` text NOT NULL,
+	`grade_group` text NOT NULL,
+	`Plane_num` text NOT NULL,
+	`dist1_ft` decimal(6,2),
+	`dist1_in` decimal(6,2),
+	`offset1_ft` decimal(6,2),
+	`offset1_in` decimal(6,2),
+	`score1` decimal(6,2),
+	`dist2_ft` decimal(6,2),
+	`dist2_in` decimal(6,2),
+	`offset2_ft` decimal(6,2),
+	`offset2_in` decimal(6,2),
+	`score2` decimal(6,2),
+	`max_dist` decimal(6,2),
+	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
+);
 
 --Query--
 SELECT t.team_id, t.name, sta.student_id, s.name, s.school, s.grade
