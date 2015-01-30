@@ -41,7 +41,7 @@
              </tr>
         <tr>
         <td><asp:Label ID="Label7" runat="server" Text="Penalty Distance"></asp:Label></td>
-        <td><asp:TextBox ID="TextBoxPDist" runat="server" Text="0"></asp:TextBox></td>
+        <td><asp:TextBox ID="TextBoxPDist" runat="server" Text="To be calculated"></asp:TextBox></td>
              </tr>
         <tr>
         <td><asp:Label ID="Label8" runat="server" Text="Total Distance"></asp:Label></td>

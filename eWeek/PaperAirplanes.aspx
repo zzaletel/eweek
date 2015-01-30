@@ -42,7 +42,7 @@
 
         <tr>
             <td><asp:Label ID="Label8" runat="server" Text="Score"></asp:Label></td>
-            <td><asp:TextBox ID="TextBoxScore" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="TextBoxScore" Text="To be calculated" runat="server"></asp:TextBox></td>
         </tr>
 
         <tr>
@@ -71,12 +71,12 @@
 
         <tr>
             <td><asp:Label ID="Label14" runat="server" Text="Score"></asp:Label></td>
-            <td><asp:TextBox ID="TextBoxScore2" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="TextBoxScore2" Text="To be calculated" runat="server"></asp:TextBox></td>
         </tr>
         
         <tr>
             <td><asp:Label ID="Label15" runat="server" Text="Max Distance"></asp:Label></td>
-            <td><asp:TextBox ID="TextBoxMaxDist" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="TextBoxMaxDist" Text="To be calculated" runat="server"></asp:TextBox></td>
         </tr>
 
         <tr>
@@ -90,6 +90,6 @@
             </td>
         </tr>
     </table>
-    <asp:Label ID="LabelEggDropOutput" runat="server" Text=" "></asp:Label>
+    <asp:Label ID="LabelOutput" runat="server" Text=" "></asp:Label>
     <asp:Label ID="LabelDebug" runat="server" Text=" "> </asp:Label>
 </asp:Content>

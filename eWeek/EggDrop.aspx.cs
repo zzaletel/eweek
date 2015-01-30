@@ -19,6 +19,15 @@ namespace ASPWenFormPractice1
         protected void ButtonCalculate_Click(object sender, EventArgs e)
         {
             this.TextBoxTotalTime.Text = Tools.getDuration(this.TextBoxSTime.Text, this.TextBoxETime.Text);
+
+            if(Double.Parse(TextBoxAllowedTime.Text) <= Tools.getMinutes(TextBoxTotalTime.Text)){
+                this.TextBoxPDist.Text =
+                    (Tools.getMinutes(TextBoxTotalTime.Text) - Double.Parse(TextBoxAllowedTime.Text)).ToString();
+            }
+            else{
+                this.TextBoxPDist.Text = "0";
+            }
+
             this.TextBoxTotalDist.Text = Tools.getSum(this.TextBoxMDist.Text, this.TextBoxPDist.Text);
         }
 
@@ -175,9 +184,9 @@ namespace ASPWenFormPractice1
             this.TextBoxSTime.Text = "";
             this.TextBoxETime.Text = "";
             this.TextBoxTotalTime.Text = "To be calculated";
-            this.TextBoxPDist.Text = "0";
+            this.TextBoxPDist.Text = "To be calculated";
             this.TextBoxTotalDist.Text = "To be calculated";
-
+            this.LabelEggDropOutput.Text = "";
         }
     }
 }

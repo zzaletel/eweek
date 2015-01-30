@@ -85,13 +85,13 @@ namespace ASPWenFormPractice1 {
         protected global::System.Web.UI.WebControls.Button ButtonSubmit;
         
         /// <summary>
-        /// LabelEggDropOutput control.
+        /// LabelOutput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelEggDropOutput;
+        protected global::System.Web.UI.WebControls.Label LabelOutput;
         
         /// <summary>
         /// LabelDebug control.

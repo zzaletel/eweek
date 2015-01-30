@@ -21,6 +21,6 @@
     </table>
     <asp:Button ID="ButtonReset" runat="server" OnClick="ButtonReset_Click" Text="Reset" />
     <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
-     <asp:Label ID="LabelEggDropOutput" runat="server" Text=" "></asp:Label>
+     <asp:Label ID="LabelOutput" runat="server" Text=" "></asp:Label>
     <asp:Label ID="LabelDebug" runat="server" Text=" "> </asp:Label>
 </asp:Content>

@@ -32,6 +32,6 @@
             </td>
         </tr>
     </table>
-    <asp:Label ID="LabelEggDropOutput" runat="server" Text=" "></asp:Label>
+    <asp:Label ID="LabelOutput" runat="server" Text=" "></asp:Label>
     <asp:Label ID="LabelDebug" runat="server" Text=" "> </asp:Label>
 </asp:Content>

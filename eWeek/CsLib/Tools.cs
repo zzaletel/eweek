@@ -44,7 +44,7 @@ namespace ASPWenFormPractice1.CsLib
             string toReturn = "";
             foreach (string token in val)
             {
-                toReturn += token;
+                toReturn += token+",";
             }
             return toReturn;
         }
@@ -60,5 +60,17 @@ namespace ASPWenFormPractice1.CsLib
             }
             return (aD + bD).ToString();
         }
+
+        public static double getMinutes(string val) {
+            if (!val.Contains(":"))
+            {
+                return 999999;
+            }
+            double toReturn = 0;
+            string[] tokens = val.Split(':');
+            toReturn = Double.Parse(tokens[0]) * 60 + Double.Parse(tokens[1]);
+            return toReturn;
+        }
+
     }
 }
