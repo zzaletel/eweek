@@ -13,8 +13,8 @@
         <li><a id="A5" runat="server" href="~/LegoLongo">Lego longo - team or individual</a></li>
         <li><a id="A6" runat="server" href="~/ShakeBreak">Shake & Break - team or individual</a></li>
         <li><a id="A7" runat="server" href="~/BridgeBuster">Bridge buster - individual</a></li>
-        <li><a id="A8" runat="server" href="~/Geomatics">Geomatics</a></li>
-        <li><a id="A9" runat="server" href="~/TowerOfPower">Tower of Power</a></li>
+        <li><a id="A8" runat="server" href="~/Geomatics">Geomatics - individual</a></li>
+        <li><a id="A9" runat="server" href="~/TowerOfPower">Tower of Power - individual</a></li>
     </ul>
 
     

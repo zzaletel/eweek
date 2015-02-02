@@ -14,8 +14,8 @@
         <li><a id="A5" runat="server" href="~/LegoLongoReport">Lego longo - team or individual</a></li>
         <li><a id="A6" runat="server" href="~/ShakeBreakReport">Shake & Break - team or individual</a></li>
         <li><a id="A7" runat="server" href="~/BridgeBusterReport">Bridge buster - individual</a></li>
-        <li><a id="A21" runat="server" href="~/GeomaticsReport">Geomatics</a></li>
-        <li><a id="A22" runat="server" href="~/TowerOfPowerReport">Tower of Power</a></li>
+        <li><a id="A21" runat="server" href="~/GeomaticsReport">Geomatics - individual</a></li>
+        <li><a id="A22" runat="server" href="~/TowerOfPowerReport">Tower of Power - individual</a></li>
     </ul>
 
     <h2>Other Tables</h2>

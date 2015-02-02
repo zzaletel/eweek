@@ -12,5 +12,6 @@ namespace ASPWenFormPractice1.CsLib
             //sets the connection string from your web config file "ConnString" is the name of your Connection String
             return System.Configuration.ConfigurationManager.ConnectionStrings["eweekDb"].ConnectionString;
         }
+
     }
 }

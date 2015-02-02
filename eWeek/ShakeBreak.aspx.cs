@@ -59,20 +59,25 @@ namespace ASPWenFormPractice1
                 return;
             }
 
-            // If<10 seconds, (seconds survived)+if >10 stories survived, 2*(Stories survived-10), else
+            // If<10 seconds, (seconds survived)+ (if >10 stories survived, 2*(Stories survived-10))
             //if >10 seconds, 10+(seconds survived-10)*2++if >10 stories survived, 2*(Stories survived-10)
-            if (time < 10 && stories_num > 10) {
-                total_points = 2 * (stories_num - 10);
+            if (time < 10) {
+                if (stories_num > 10)
+                {
+                    total_points = time + 2 * (stories_num - 10);
+                }
+                else {
+                    total_points = time;
+                }
             }
-            else if (time > 10) {
-                total_points = 10 + (stories_num - 10) * 2;
-            }
-            else if (stories_num > 10)
-            {
-                total_points = 2 * (stories_num - 10);
-            }
-            else {//both < 10
-                total_points = time;
+            else { //time >10
+                if (stories_num > 10)
+                {
+                    total_points = 10 + 2*(time-10) + 2 * (stories_num - 10);
+                }
+                else {
+                    total_points = 10 + 2 * (time - 10);
+                }
             }
 
             try

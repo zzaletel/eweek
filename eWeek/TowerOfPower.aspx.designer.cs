@@ -40,13 +40,13 @@ namespace ASPWenFormPractice1 {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// DropDownListSurvival control.
+        /// DropDownListPasses control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownListSurvival;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListPasses;
         
         /// <summary>
         /// Label3 control.
@@ -58,13 +58,13 @@ namespace ASPWenFormPractice1 {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// TextBox1 control.
+        /// TextBoxMass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxMass;
         
         /// <summary>
         /// Label4 control.
@@ -76,13 +76,13 @@ namespace ASPWenFormPractice1 {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// TextBox2 control.
+        /// TextBoxLoad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxLoad;
         
         /// <summary>
         /// ButtonReset control.
@@ -92,15 +92,6 @@ namespace ASPWenFormPractice1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonReset;
-        
-        /// <summary>
-        /// ButtonCalculate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCalculate;
         
         /// <summary>
         /// ButtonSubmit control.

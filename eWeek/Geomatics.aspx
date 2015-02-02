@@ -17,8 +17,8 @@
         </tr>
 
         <tr>
-            <td><asp:Label ID="Label2" runat="server" Text="Time"></asp:Label></td>
-            <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+            <td><asp:Label ID="Label2" runat="server" Text="Time (seconds)"></asp:Label></td>
+            <td><asp:TextBox ID="TextBoxTime1" runat="server"></asp:TextBox></td>
         </tr>
 
         <tr>
@@ -26,8 +26,8 @@
         </tr>
 
         <tr>
-            <td><asp:Label ID="Label3" runat="server" Text="Time"></asp:Label></td>
-            <td><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
+            <td><asp:Label ID="Label3" runat="server" Text="Time (seconds)"></asp:Label></td>
+            <td><asp:TextBox ID="TextBoxTime2" runat="server"></asp:TextBox></td>
         </tr>
     
          <tr>
@@ -41,4 +41,6 @@
         </tr>
 
     </table>
+    <asp:Label ID="LabelOutput" runat="server" Text=" "></asp:Label>
+    <asp:Label ID="LabelDebug" runat="server" Text=" "> </asp:Label>
 </asp:Content>

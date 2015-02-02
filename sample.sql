@@ -147,12 +147,28 @@ CREATE TABLE `paper_airplanes_report` (
 CREATE TABLE `bridge_buster_report` (
 	`record_id` int(4) NOT NULL AUTO_INCREMENT,
 	`participant_id` int(4) NOT NULL,
-	`student_names` text NOT NULL,
+	`student_name` text NOT NULL,
 	`school` text NOT NULL,
 	`grade_group` text NOT NULL,
 	`passes_inspection` text,
 	`mass` text,
-	`load` text,
+	`contest_mass` text,
+	`load_lb` text,
+	`ratio` text,
+	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
+);
+
+CREATE TABLE `tower_of_power` (
+	`record_id` int(4) NOT NULL AUTO_INCREMENT,
+	`participant_id` int(4) NOT NULL,
+	`student_name` text NOT NULL,
+	`school` text NOT NULL,
+	`grade_group` text NOT NULL,
+	`passes_inspection` text,
+	`mass` text,
+	`contest_mass` text,
+	`peak_load` text,
+	`ratio` text,
 	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
 );
 
@@ -162,19 +178,9 @@ CREATE TABLE `geomatics` (
 	`student_names` text NOT NULL,
 	`school` text NOT NULL,
 	`grade_group` text NOT NULL,
-	`time` text,
-	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
-);
-
-CREATE TABLE `tower_of_power` (
-	`record_id` int(4) NOT NULL AUTO_INCREMENT,
-	`participant_id` int(4) NOT NULL,
-	`student_names` text NOT NULL,
-	`school` text NOT NULL,
-	`grade_group` text NOT NULL,
-	`passes_inspection` text,
-	`mass` text,
-	`peak_load` text,
+	`time_1` text,
+	`time_2` text,
+	`score` text,
 	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
 );
 

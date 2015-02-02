@@ -13,7 +13,7 @@
 
         <tr>
         <td><asp:Label ID="Label2" runat="server" Text="Passes Inspection(Y/N)?"></asp:Label>&nbsp;&nbsp;
-            <asp:DropDownList ID="DropDownListSurvival" runat="server">
+            <asp:DropDownList ID="DropDownListPasses" runat="server">
                 <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
                 <asp:ListItem Text="No" Value="No"></asp:ListItem>
             </asp:DropDownList>
@@ -22,12 +22,12 @@
         
         <tr>
             <td><asp:Label ID="Label3" runat="server" Text="Mass (grams)"></asp:Label></td>
-            <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="TextBoxMass" runat="server"></asp:TextBox></td>
         </tr>
      
         <tr>
             <td><asp:Label ID="Label4" runat="server" Text="Peak Load"></asp:Label></td>
-            <td><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
+            <td><asp:TextBox ID="TextBoxLoad" runat="server"></asp:TextBox></td>
         </tr>
 
         <tr>
@@ -35,9 +35,7 @@
                 <asp:Button ID="ButtonReset" runat="server" OnClick="ButtonReset_Click" Text="Reset" />
                 </td>
             <td>
-                <asp:Button ID="ButtonCalculate" runat="server" Text="Calculate" OnClick="ButtonCalculate_Click" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
-                
+                <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
             </td>
         </tr>
     </table>
