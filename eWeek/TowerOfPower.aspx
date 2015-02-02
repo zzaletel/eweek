@@ -1,10 +1,10 @@
-﻿<%@ Page Title="Bridge Buster Report Data Entry" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BridgeBuster.aspx.cs" Inherits="ASPWenFormPractice1.BridgeBuster" %>
+﻿<%@ Page Title="Tower of Power" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TowerOfPower.aspx.cs" Inherits="ASPWenFormPractice1.TowerOfPower" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Bridge Buster</h2>
+    <h2>Tower of Power</h2>
     <table>
         <tr>
             <td><asp:Label ID="Label1" runat="server" Text="Student ID"></asp:Label></td>
@@ -26,7 +26,7 @@
         </tr>
      
         <tr>
-            <td><asp:Label ID="Label4" runat="server" Text="Load"></asp:Label></td>
+            <td><asp:Label ID="Label4" runat="server" Text="Peak Load"></asp:Label></td>
             <td><asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>
         </tr>
 

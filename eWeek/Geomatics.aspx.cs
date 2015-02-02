@@ -4,27 +4,24 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO;
-using System.Data;
-using System.Drawing;
-using System.Configuration;
 
 namespace ASPWenFormPractice1
 {
-    public partial class Query : System.Web.UI.Page
+    public partial class Geomatics : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-    
-
-        public override void VerifyRenderingInServerForm(Control control)
+        protected void ButtonReset_Click(object sender, EventArgs e)
         {
-            /* Verifies that the control is rendered */
+
+        }
+
+        protected void ButtonSubmit_Click(object sender, EventArgs e)
+        {
+
         }
     }
-
-
 }

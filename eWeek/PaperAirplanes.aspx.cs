@@ -47,17 +47,33 @@ namespace ASPWenFormPractice1
             double[] val = new double[8];
             int n = 0;
             foreach(string i in info){            
-                if(!double.TryParse(i, out val[n])){ this.LabelOutput.Text = "invalid input(s)"; return;}
+                if(!double.TryParse(i, out val[n])){
+                    if (i == "" && n > 3) { } //second attempt is empty
+                    else
+                    {
+                        this.LabelOutput.Text = "invalid input(s)";
+                        return;
+                    }
+                }
                 n++;
             }
 
-            this.TextBoxScore.Text = ((val[0] + val[1] / 12) - 2 * (val[2] + val[3] / 12)).ToString("#.##");
-            this.TextBoxScore2.Text = ((val[4] + val[5] / 12) - 2 * (val[6] + val[7] / 12)).ToString("#.##");
-            this.TextBoxMaxDist.Text = (
-                ((val[0] + val[1] / 12) - 2*(val[2] + val[3] / 12)) > 
-                ((val[4] + val[5] / 12) - 2*(val[6] + val[7] / 12))) ?
-                ((val[0] + val[1] / 12) - 2 * (val[2] + val[3] / 12)).ToString("#.##") :
-                ((val[4] + val[5] / 12) - 2 * (val[6] + val[7] / 12)).ToString("#.##");
+            if (info[4] == "" && info[5] == "")//second attempt is empty
+            {
+                this.TextBoxScore.Text = ((val[0] + val[1] / 12) - 2 * (val[2] + val[3] / 12)).ToString("#.##");
+                this.TextBoxMaxDist.Text = ((val[0] + val[1] / 12) - 2 * (val[2] + val[3] / 12)).ToString("#.##");
+                this.TextBoxScore2.Text = "";
+            }
+            else
+            {
+                this.TextBoxScore.Text = ((val[0] + val[1] / 12) - 2 * (val[2] + val[3] / 12)).ToString("#.##");
+                this.TextBoxScore2.Text = ((val[4] + val[5] / 12) - 2 * (val[6] + val[7] / 12)).ToString("#.##");
+                this.TextBoxMaxDist.Text = (
+                    ((val[0] + val[1] / 12) - 2 * (val[2] + val[3] / 12)) >
+                    ((val[4] + val[5] / 12) - 2 * (val[6] + val[7] / 12))) ?
+                    ((val[0] + val[1] / 12) - 2 * (val[2] + val[3] / 12)).ToString("#.##") :
+                    ((val[4] + val[5] / 12) - 2 * (val[6] + val[7] / 12)).ToString("#.##");
+            }
         }
 
         protected void ButtonSubmit_Click(object sender, EventArgs e)
@@ -87,7 +103,7 @@ namespace ASPWenFormPractice1
                     "dist2_ft, dist2_in, offset2_ft, offset2_in, score2, max_dist) VALUES " +
                    "('" + this.TextBoxID.Text + "','" + info[0] + "','" + info[1] + "','" + info[3]
                 + "','" + this.TextBoxPlaneNum.Text + "','" + this.TextBoxDist_ft.Text + "','" + this.TextBoxDist_in.Text +
-                "','" + this.TextBoxScore.Text+ "','" + this.TextBoxOffset_ft.Text + "','" + this.TextBoxOffset_in.Text + "','"
+                "','" + this.TextBoxOffset_ft.Text + "','" + this.TextBoxOffset_in.Text + "','" + this.TextBoxScore.Text + "','"
                 + this.TextBoxDist2_ft.Text + "','" + this.TextBoxDist2_in.Text + "','" +
                 this.TextBoxOffset2_ft.Text + "','" + this.TextBoxOffset2_in.Text + "','" + this.TextBoxScore2.Text + "','"
                 + this.TextBoxMaxDist.Text +"');";

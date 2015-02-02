@@ -78,13 +78,13 @@ CREATE TABLE `lego_longo_report` (
 	`student_names` text NOT NULL,
 	`school` text NOT NULL,
 	`grade_group` text NOT NULL,
-	`length1` decimal(6,3),
-	`weight1` decimal(6,2),
-	`survive1` text NOT NULL,
-	`length2` decimal(6,3),
-	`weight2` decimal(6,2),
-	`survive2` text NOT NULL,
-	`max_distance` decimal(6,3),
+	`length1` text,
+	`weight1` text,
+	`survive1` text,
+	`length2` text DEFAULT NULL,
+	`weight2` text DEFAULT NULL,
+	`survive2` text DEFAULT NULL,
+	`max_distance` text NOT NULL,
 	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
 );
 
@@ -130,17 +130,51 @@ CREATE TABLE `paper_airplanes_report` (
 	`school` text NOT NULL,
 	`grade_group` text NOT NULL,
 	`Plane_num` text NOT NULL,
-	`dist1_ft` decimal(6,2),
-	`dist1_in` decimal(6,2),
-	`offset1_ft` decimal(6,2),
-	`offset1_in` decimal(6,2),
-	`score1` decimal(6,2),
-	`dist2_ft` decimal(6,2),
-	`dist2_in` decimal(6,2),
-	`offset2_ft` decimal(6,2),
-	`offset2_in` decimal(6,2),
-	`score2` decimal(6,2),
-	`max_dist` decimal(6,2),
+	`dist1_ft` text,
+	`dist1_in` text,
+	`offset1_ft` text,
+	`offset1_in` text,
+	`score1` text,
+	`dist2_ft` text DEFAULT NULL,
+	`dist2_in` text DEFAULT NULL,
+	`offset2_ft` text DEFAULT NULL,
+	`offset2_in` text DEFAULT NULL,
+	`score2` text DEFAULT NULL,
+	`max_dist` text NOT NULL,
+	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
+);
+
+CREATE TABLE `bridge_buster_report` (
+	`record_id` int(4) NOT NULL AUTO_INCREMENT,
+	`participant_id` int(4) NOT NULL,
+	`student_names` text NOT NULL,
+	`school` text NOT NULL,
+	`grade_group` text NOT NULL,
+	`passes_inspection` text,
+	`mass` text,
+	`load` text,
+	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
+);
+
+CREATE TABLE `geomatics` (
+	`record_id` int(4) NOT NULL AUTO_INCREMENT,
+	`participant_id` int(4) NOT NULL,
+	`student_names` text NOT NULL,
+	`school` text NOT NULL,
+	`grade_group` text NOT NULL,
+	`time` text,
+	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
+);
+
+CREATE TABLE `tower_of_power` (
+	`record_id` int(4) NOT NULL AUTO_INCREMENT,
+	`participant_id` int(4) NOT NULL,
+	`student_names` text NOT NULL,
+	`school` text NOT NULL,
+	`grade_group` text NOT NULL,
+	`passes_inspection` text,
+	`mass` text,
+	`peak_load` text,
 	CONSTRAINT pk_edr_record_id PRIMARY KEY(`record_id`)
 );
 
