@@ -14,6 +14,10 @@ namespace ASPWenFormPractice1.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             RegisterUser.ContinueDestinationPageUrl = Request.QueryString["ReturnUrl"];
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                this.Visible = true;
+            }
         }
 
         protected void RegisterUser_CreatedUser(object sender, EventArgs e)

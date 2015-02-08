@@ -12,7 +12,12 @@ namespace ASPWenFormPractice1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            this.Lable_intro.Style["font-weight"] = "bold";
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                this.Button_student_reg.Style["display"] = "";
+                this.Lable_intro.Style["display"] = "none";
+            }
         }
 
         protected void Button_Student_reg(object sender, EventArgs e)

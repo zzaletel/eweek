@@ -1,4 +1,4 @@
-﻿<%@ Page Title="LegoLongo Report Data Entry" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LegoLongo.aspx.cs" Inherits="ASPWenFormPractice1.LegoLongo" %>
+﻿<%@ Page visible="false" Title="LegoLongo Report Data Entry" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LegoLongo.aspx.cs" Inherits="ASPWenFormPractice1.LegoLongo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">

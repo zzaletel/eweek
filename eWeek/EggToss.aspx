@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Egg Toss Report Data Entry" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EggToss.aspx.cs" Inherits="ASPWenFormPractice1.EggToss" %>
+﻿<%@ Page visible="false" Title="Egg Toss Report Data Entry" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EggToss.aspx.cs" Inherits="ASPWenFormPractice1.EggToss" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">

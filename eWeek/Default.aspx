@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="Student Registration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ASPWenFormPractice1._Default" %>
 
+
+
 <asp:Content runat="server" ID="FeaturedContent" ContentPlaceHolderID="FeaturedContent">
     <section class="featured">
         <div class="content-wrapper">
@@ -16,8 +18,8 @@
     </section>
 </asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    
-        <table class="style1">
+        <asp:Label ID="Lable_intro" runat="server" Text="You need to Log in to be able to use this website."></asp:Label>
+        <table ID="Table_student_reg" class="style1">
             <tr>
                 <td>*Name:</td>
                 <td>
@@ -45,34 +47,9 @@
             </tr>
         </table>
     
-    <asp:Button ID="Button_student_reg" runat="server" Text="Register" 
+    <asp:Button Style="display: none;" ID="Button_student_reg" runat="server" Text="Register" 
                              onclick="Button_Student_reg" />
         <asp:Label ID="Label_student_reg" runat="server" Text="Register as an individual"></asp:Label>
-
-    <%--<br />
-    <br />
-    <br />
-
-        <table class="style1">
-            <tr>
-                <td>*Team Name:</td>
-                <td>
-                    <asp:TextBox ID="TextTeamName" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>*Team Members:</td>
-                <td>
-                    <asp:TextBox ID="TextTeamMembers" runat="server"></asp:TextBox>
-                    <a> Type Members' ID that was obtained from individual registration, e.g(12,14,29)</a>
-                </td>
-            </tr>
-         
-        </table>
- 
-    <asp:Button ID="Button_team_reg" runat="server" Text="Register" 
-                             onclick="Button_Team_reg" />
-        <asp:Label ID="Label_team_reg" runat="server" Text="Register as a team"></asp:Label>--%>
 
     
     <br />

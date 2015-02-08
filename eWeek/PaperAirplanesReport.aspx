@@ -1,4 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PaperAirplanesReport.aspx.cs" Inherits="ASPWenFormPractice1.PaperAirplanesReport" %>
+﻿<%@ Page visible="false" Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PaperAirplanesReport.aspx.cs" Inherits="ASPWenFormPractice1.PaperAirplanesReport" %>
+<script runat="server">
+
+ private void OnRecordDeleted(object source, SqlDataSourceStatusEventArgs e)
+ {
+     Label1.Text = e.AffectedRows + " row(s) were deleted";
+ }
+ 
+</script>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
@@ -37,5 +45,15 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:eweekDb %>" ProviderName="<%$ ConnectionStrings:eweekDb.ProviderName %>" SelectCommand="SELECT * FROM paper_airplanes_report;"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+         ConnectionString="<%$ ConnectionStrings:eweekDb %>" 
+        ProviderName="<%$ ConnectionStrings:eweekDb.ProviderName %>" 
+        SelectCommand="SELECT * FROM paper_airplanes_report;"
+        DeleteCommand="DELETE FROM paper_airplanes_report WHERE record_id=?;"
+        OnDeleted="OnRecordDeleted"
+        ></asp:SqlDataSource>
+    <br /><br /><br />
+    <asp:Button ID="ButtonExport" runat="server" Text="Export To Excel" onclick="ExportToExcel"/>
+    <asp:Button ID="ButtonEdit" runat="server" Text="Edit" OnClick="ButtonEdit_Click" />
+    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 </asp:Content>

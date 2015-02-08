@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Team Registration" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="TeamRegistration.aspx.cs" Inherits="ASPWenFormPractice1.Team_Registration" %>
+﻿<%@ Page visible="false" Title="Team Registration" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="TeamRegistration.aspx.cs" Inherits="ASPWenFormPractice1.Team_Registration" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>

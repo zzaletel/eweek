@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Geomatics" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Geomatics.aspx.cs" Inherits="ASPWenFormPractice1.Geomatics" %>
+﻿<%@ Page visible="false" Title="Geomatics" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Geomatics.aspx.cs" Inherits="ASPWenFormPractice1.Geomatics" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">

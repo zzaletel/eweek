@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Tower of Power" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TowerOfPower.aspx.cs" Inherits="ASPWenFormPractice1.TowerOfPower" %>
+﻿<%@ Page visible="false" Title="Tower of Power" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TowerOfPower.aspx.cs" Inherits="ASPWenFormPractice1.TowerOfPower" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Bridge Buster Report Data Entry" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BridgeBuster.aspx.cs" Inherits="ASPWenFormPractice1.BridgeBuster" %>
+﻿<%@ Page visible="false" Title="Bridge Buster Report Data Entry" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BridgeBuster.aspx.cs" Inherits="ASPWenFormPractice1.BridgeBuster" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">

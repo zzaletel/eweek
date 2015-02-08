@@ -48,7 +48,7 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul>
-                                <li><a id="registerLink" runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a id="registerLink" visible="false" runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a id="loginLink" runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
@@ -64,11 +64,12 @@
                 <nav>
                     <ul id="menu">
                         <li><a runat="server" href="~/">Student Registration</a></li>
-                        <li><a runat="server" href="~/TeamRegistration">Team Registration</a></li>
-                        <li><a runat="server" href="~/Events">Report Data Entry</a></li>
-                        <li><a runat="server" href="~/Query">Query</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" id="page_team" visible="false" href="~/TeamRegistration">Team Registration</a></li>
+                        <li><a runat="server" id="page_events" visible="false" href="~/Events">Report Data Entry</a></li>
+                        <li><a runat="server" id="page_query" visible="false" href="~/Query">Query</a></li>
+                        <li><a runat="server" id="page_reg" visible="false" href="~/Account/Register">*Register Web User</a></li>
+                        <li><a runat="server" visible="false" href="~/About">About</a></li>
+                        <li><a runat="server" visible="false" href="~/Contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
