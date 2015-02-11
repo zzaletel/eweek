@@ -1,37 +1,4 @@
-CREATE TABLE `student` (
-	`student_id` int(4) NOT NULL AUTO_INCREMENT,
-	`name` text NOT NULL,
-	`school` text NOT NULL,
-	`grade` text NOT NULL, 	
-	CONSTRAINT pk_stu_student_id PRIMARY KEY(`student_id`)	
-);
 
-CREATE TABLE `event` (
-	`event_id` int(2) NOT NULL AUTO_INCREMENT,
-	`name` text NOT NULL,	
-	CONSTRAINT pk_stu_student_id PRIMARY KEY(`event_id`)	
-);
-
-CREATE TABLE `team` (
-	`team_id` int(4) NOT NULL AUTO_INCREMENT,
-	`name` text NOT NULL,
-	`member_names` text NOT NULL,
-	`team_size` int(2) NOT NULL,
-	`representative_id` int(4) NOT NULL,
-	CONSTRAINT pk_stu_student_id PRIMARY KEY(`team_id`)	
-);
-
-ALTER TABLE team AUTO_INCREMENT=5001;
-
-CREATE TABLE `student_event_affiliation` (
-	`student_id` int(4) NOT NULL,
-	`event_id` int(2) NOT NULL,
-	CONSTRAINT pk_sea_student_major_id PRIMARY KEY(`student_id`, `event_id`),
-	CONSTRAINT fk_sea_student_id FOREIGN KEY(`student_id`) REFERENCES student(`student_id`)
-	ON UPDATE CASCADE ON DELETE RESTRICT,
-	CONSTRAINT fk_sea_event_id FOREIGN KEY(`event_id`) REFERENCES event(`event_id`)
-	ON UPDATE CASCADE ON DELETE RESTRICT
-);
 
 CREATE TABLE `team_event_affiliation` (
 	`team_id` int(4) NOT NULL,
