@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
+using ASPWenFormPractice1.CsLib;
 
 namespace ASPWenFormPractice1
 {
@@ -24,12 +25,12 @@ namespace ASPWenFormPractice1
             {
                 try
                 {
-                    MySqlConnection mySqlConnection = new MySqlConnection(GetConnectionString());
+                    SqlConnection mySqlConnection = new SqlConnection(DBController.GetConnectionString("eweekDb"));
 
                     string staSql = "INSERT INTO student_team_affiliation (team_id,student_id) VALUES ";
 
                     string getStudentNameSqlPre = "select name from student where student_id =";
-                    string getIdQ = "SELECT LAST_INSERT_ID();";
+                    string getIdQ = "SELECT SCOPE_IDENTITY();";
                     string id = "";
 
                     string TeamMembers = this.TextTeamMembers.Text;
@@ -39,14 +40,14 @@ namespace ASPWenFormPractice1
                     int teamSize = words.Length;
                     int teamRep = Int32.Parse(words[0]);
 
-                    MySqlCommand Command;
-                    MySqlDataReader mySqlDataReader;
+                    SqlCommand Command;
+                    SqlDataReader mySqlDataReader;
                     mySqlConnection.Open();
 
                     foreach (string s in words) //insert members to new team
                     {
                         getStudentNameSql = getStudentNameSqlPre + Int32.Parse(s) + ";";
-                        Command = new MySqlCommand(getStudentNameSql, mySqlConnection);
+                        Command = new SqlCommand(getStudentNameSql, mySqlConnection);
                         mySqlDataReader = Command.ExecuteReader();
                         while (mySqlDataReader.Read())
                         {
@@ -59,7 +60,7 @@ namespace ASPWenFormPractice1
                        "('" + this.TextTeamName.Text + "','" + allNames + "','" + teamSize + "','"
                        + teamRep + "');";
 
-                    Command = new MySqlCommand(teamSqlQuery, mySqlConnection);        
+                    Command = new SqlCommand(teamSqlQuery, mySqlConnection);        
                     mySqlDataReader = Command.ExecuteReader();
 
                     while (mySqlDataReader.Read())
@@ -67,12 +68,12 @@ namespace ASPWenFormPractice1
                     }
                     mySqlDataReader.Close();
 
-                    Command = new MySqlCommand(getIdQ, mySqlConnection);
+                    Command = new SqlCommand(getIdQ, mySqlConnection);
                     mySqlDataReader = Command.ExecuteReader();
 
                     while (mySqlDataReader.Read())
                     {
-                        id = mySqlDataReader.GetString(0);  //get newly inserted team id
+                        id = mySqlDataReader.GetDecimal(0).ToString();  //get newly inserted team id
                     }
                     mySqlDataReader.Close();
 
@@ -80,7 +81,7 @@ namespace ASPWenFormPractice1
                     foreach (string s in words) //insert members to new team
                     {
                         getStudentNameSql += Int32.Parse(s) + ";";
-                        Command = new MySqlCommand(staSql + "('" + id + "','" + s + "');", mySqlConnection);
+                        Command = new SqlCommand(staSql + "('" + id + "','" + s + "');", mySqlConnection);
                         mySqlDataReader = Command.ExecuteReader();
                         mySqlDataReader.Close();
                     }
@@ -116,10 +117,5 @@ namespace ASPWenFormPractice1
             return true;
         }
 
-        public string GetConnectionString()
-        {
-            //sets the connection string from your web config file "ConnString" is the name of your Connection String
-            return System.Configuration.ConfigurationManager.ConnectionStrings["eweekDb"].ConnectionString;
-        }
     }
 }

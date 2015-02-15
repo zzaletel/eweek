@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 using ASPWenFormPractice1.CsLib;
-using MySql.Data.MySqlClient;
 
 namespace ASPWenFormPractice1
 {
@@ -43,7 +43,7 @@ namespace ASPWenFormPractice1
                 this.LabelEggDropOutput.Text = "Invaild Id number!";
                 return;
             }
-
+          
             if (idValue > 5000)
             {
                 //get info from team table by id
@@ -57,7 +57,7 @@ namespace ASPWenFormPractice1
 
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(GetConnectionString());
+                SqlConnection mySqlConnection = new SqlConnection(GetConnectionString());
 
                 string sqlQuery = "INSERT INTO egg_drop_report (participant_id, student_names, school," +
                     "number_of_team_members, grade_group, survive, measured_dist, allowed_time, start_time," +
@@ -68,8 +68,8 @@ namespace ASPWenFormPractice1
                 + this.TextBoxETime.Text + "','" + this.TextBoxTotalTime.Text + "','" +
                 this.TextBoxPDist.Text + "','" + this.TextBoxTotalDist.Text + "');";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
+                SqlCommand Command = new SqlCommand(sqlQuery, mySqlConnection);
+                SqlDataReader mySqlDataReader;
                 mySqlConnection.Open();
                 mySqlDataReader = Command.ExecuteReader();
 
@@ -94,12 +94,12 @@ namespace ASPWenFormPractice1
             string[] toReturn = new string[4];
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(GetConnectionString());
+                SqlConnection mySqlConnection = new SqlConnection(GetConnectionString());
 
                 string sqlQuery = "SELECT name, school, grade FROM student WHERE student_id =" + id + ";";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
+                SqlCommand Command = new SqlCommand(sqlQuery, mySqlConnection);
+                SqlDataReader mySqlDataReader;
                 mySqlConnection.Open();
                 mySqlDataReader = Command.ExecuteReader();
 
@@ -116,7 +116,7 @@ namespace ASPWenFormPractice1
             }
             catch (Exception ex)
             {
-                this.LabelEggDropOutput.Text = "Get Student Info Error: " + ex.Message;
+                this.LabelDebug.Text = "Get Student Info Error: " + ex.Message;
             }
 
             toReturn[2] = "1"; //one person
@@ -128,29 +128,27 @@ namespace ASPWenFormPractice1
             string[] toReturn = new string[4];
             string studentRep = "";
 
-            try
-            {
-                MySqlConnection mySqlConnection = new MySqlConnection(GetConnectionString());
+            
+                SqlConnection mySqlConnection = new SqlConnection(GetConnectionString());
 
-                string sqlQuery = "select member_names, team_size, representative_id " +
-                "from team where team_id =" + id + ";";
+                string sqlQuery = "select member_names, team_size, representative_id from team where team_id = " + id + ";";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
+                SqlCommand Command = new SqlCommand(sqlQuery, mySqlConnection);
+                SqlDataReader mySqlDataReader;
                 mySqlConnection.Open();
                 mySqlDataReader = Command.ExecuteReader();
 
                 while (mySqlDataReader.Read())
                 {
                     toReturn[0] = mySqlDataReader.GetString(0);    // member names
-                    toReturn[2] = mySqlDataReader.GetString(1);    // team size
-                    studentRep = mySqlDataReader.GetString(2);  //  rep id
+                    toReturn[2] = mySqlDataReader.GetInt32(1).ToString();    // team size
+                    studentRep = mySqlDataReader.GetInt32(2).ToString();  //  rep id GetDecimal
                 }
 
                 mySqlDataReader.Close();
 
-                sqlQuery = "select school, grade from student where student_id =" + studentRep + ";";
-                Command = new MySqlCommand(sqlQuery, mySqlConnection);
+                sqlQuery = "select school, grade from student where student_id = " + studentRep + ";";
+                Command = new SqlCommand(sqlQuery, mySqlConnection);
                 mySqlDataReader = Command.ExecuteReader();
 
                 while (mySqlDataReader.Read())
@@ -162,11 +160,7 @@ namespace ASPWenFormPractice1
                 mySqlDataReader.Dispose();
                 mySqlConnection.Close();
 
-            }
-            catch (Exception ex)
-            {
-                this.LabelEggDropOutput.Text = "Get Team Info Error: " + ex.Message;
-            }
+           
 
             return toReturn;
         }

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 using ASPWenFormPractice1.CsLib;
-using MySql.Data.MySqlClient;
 
 namespace ASPWenFormPractice1
 {
@@ -85,7 +85,7 @@ namespace ASPWenFormPractice1
 
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(SqlTool.GetConnectionString());
+                SqlConnection SqlConnection = new SqlConnection(SqlTool.GetConnectionString());
 
                 string sqlQuery = "INSERT INTO shake_and_break_report (participant_id, student_names, school," +
                     "grade_group, survival_time, stories_num, total_points) VALUES " +
@@ -93,17 +93,17 @@ namespace ASPWenFormPractice1
                 + "','" + this.TextBoxSurvivalTime.Text + "','" + this.TextBoxStoriesNum.Text + "','"
                 + total_points + "');";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
-                mySqlConnection.Open();
-                mySqlDataReader = Command.ExecuteReader();
+                SqlCommand Command = new SqlCommand(sqlQuery, SqlConnection);
+                SqlDataReader SqlDataReader;
+                SqlConnection.Open();
+                SqlDataReader = Command.ExecuteReader();
 
-                while (mySqlDataReader.Read())
+                while (SqlDataReader.Read())
                 {
                 }
 
-                mySqlDataReader.Dispose();
-                mySqlConnection.Close();
+                SqlDataReader.Dispose();
+                SqlConnection.Close();
 
                 this.LabelOutput.Text = "ID: " + this.TextBoxID.Text +
                     ", Your record was inserted.";
@@ -119,24 +119,24 @@ namespace ASPWenFormPractice1
             string[] toReturn = new string[4];
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(SqlTool.GetConnectionString());
+                SqlConnection SqlConnection = new SqlConnection(SqlTool.GetConnectionString());
 
                 string sqlQuery = "SELECT name, school, grade FROM student WHERE student_id =" + id + ";";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
-                mySqlConnection.Open();
-                mySqlDataReader = Command.ExecuteReader();
+                SqlCommand Command = new SqlCommand(sqlQuery, SqlConnection);
+                SqlDataReader SqlDataReader;
+                SqlConnection.Open();
+                SqlDataReader = Command.ExecuteReader();
 
-                while (mySqlDataReader.Read())
+                while (SqlDataReader.Read())
                 {
-                    toReturn[0] = mySqlDataReader.GetString(0);    //name
-                    toReturn[1] = mySqlDataReader.GetString(1);    //school
-                    toReturn[3] = mySqlDataReader.GetString(2);    //grade
+                    toReturn[0] = SqlDataReader.GetString(0);    //name
+                    toReturn[1] = SqlDataReader.GetString(1);    //school
+                    toReturn[3] = SqlDataReader.GetString(2);    //grade
                 }
 
-                mySqlDataReader.Dispose();
-                mySqlConnection.Close();
+                SqlDataReader.Dispose();
+                SqlConnection.Close();
 
             }
             catch (Exception ex)
@@ -155,37 +155,37 @@ namespace ASPWenFormPractice1
 
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(SqlTool.GetConnectionString());
+                SqlConnection SqlConnection = new SqlConnection(SqlTool.GetConnectionString());
 
                 string sqlQuery = "select member_names, team_size, representative_id " +
                 "from team where team_id =" + id + ";";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
-                mySqlConnection.Open();
-                mySqlDataReader = Command.ExecuteReader();
+                SqlCommand Command = new SqlCommand(sqlQuery, SqlConnection);
+                SqlDataReader SqlDataReader;
+                SqlConnection.Open();
+                SqlDataReader = Command.ExecuteReader();
 
-                while (mySqlDataReader.Read())
+                while (SqlDataReader.Read())
                 {
-                    toReturn[0] = mySqlDataReader.GetString(0);    // member names
-                    toReturn[2] = mySqlDataReader.GetString(1);    // team size
-                    studentRep = mySqlDataReader.GetString(2);  //  rep id
+                    toReturn[0] = SqlDataReader.GetString(0);    // member names
+                    toReturn[2] = SqlDataReader.GetInt32(1).ToString();    // team size
+                    studentRep = SqlDataReader.GetInt32(2).ToString();  //  rep id
                 }
 
-                mySqlDataReader.Close();
+                SqlDataReader.Close();
 
                 sqlQuery = "select school, grade from student where student_id =" + studentRep + ";";
-                Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                mySqlDataReader = Command.ExecuteReader();
+                Command = new SqlCommand(sqlQuery, SqlConnection);
+                SqlDataReader = Command.ExecuteReader();
 
-                while (mySqlDataReader.Read())
+                while (SqlDataReader.Read())
                 {
-                    toReturn[1] = mySqlDataReader.GetString(0);    // school
-                    toReturn[3] = mySqlDataReader.GetString(1);    // grade
+                    toReturn[1] = SqlDataReader.GetString(0);    // school
+                    toReturn[3] = SqlDataReader.GetString(1);    // grade
                 }
 
-                mySqlDataReader.Dispose();
-                mySqlConnection.Close();
+                SqlDataReader.Dispose();
+                SqlConnection.Close();
 
             }
             catch (Exception ex)

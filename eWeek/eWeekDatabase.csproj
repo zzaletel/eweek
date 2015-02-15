@@ -225,6 +225,7 @@
     <Content Include="LegoLongoReport.aspx" />
     <Content Include="packages.config" />
     <Content Include="Events.aspx" />
+    <None Include="Properties\PublishProfiles\eweektest2.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="PaperAirplanes.aspx" />
     <Content Include="PaperAirplanesReport.aspx" />
@@ -264,7 +265,9 @@
     <Content Include="TowerOfPower.aspx" />
     <Content Include="TowerOfPowerReport.aspx" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
@@ -344,6 +347,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CsLib\DBControllers.cs" />
     <Compile Include="CsLib\SqlTool.cs" />
     <Compile Include="CsLib\Tools.cs" />
     <Compile Include="Default.aspx.cs">

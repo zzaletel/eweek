@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 using ASPWenFormPractice1.CsLib;
-using MySql.Data.MySqlClient;
 
 namespace ASPWenFormPractice1
 {
@@ -75,7 +75,7 @@ namespace ASPWenFormPractice1
 
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(SqlTool.GetConnectionString());
+                SqlConnection mySqlConnection = new SqlConnection(SqlTool.GetConnectionString());
 
                 string sqlQuery = "INSERT INTO egg_toss_report (participant_id, student_names, school," +
                     "grade_group, dist_from_target, construt_time, total_points) VALUES " +
@@ -83,8 +83,8 @@ namespace ASPWenFormPractice1
                 + "','" + this.TextBoxDist.Text + "','" + this.TextBoxConstrutTime.Text
                 + "','" + totalPoint +  "');";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
+                SqlCommand Command = new SqlCommand(sqlQuery, mySqlConnection);
+                SqlDataReader mySqlDataReader;
                 mySqlConnection.Open();
                 mySqlDataReader = Command.ExecuteReader();
 
@@ -109,12 +109,12 @@ namespace ASPWenFormPractice1
             string[] toReturn = new string[4];
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(SqlTool.GetConnectionString());
+                SqlConnection mySqlConnection = new SqlConnection(SqlTool.GetConnectionString());
 
                 string sqlQuery = "SELECT name, school, grade FROM student WHERE student_id =" + id + ";";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
+                SqlCommand Command = new SqlCommand(sqlQuery, mySqlConnection);
+                SqlDataReader mySqlDataReader;
                 mySqlConnection.Open();
                 mySqlDataReader = Command.ExecuteReader();
 
@@ -145,27 +145,27 @@ namespace ASPWenFormPractice1
 
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(SqlTool.GetConnectionString());
+                SqlConnection mySqlConnection = new SqlConnection(SqlTool.GetConnectionString());
 
                 string sqlQuery = "select member_names, team_size, representative_id " +
                 "from team where team_id =" + id + ";";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
+                SqlCommand Command = new SqlCommand(sqlQuery, mySqlConnection);
+                SqlDataReader mySqlDataReader;
                 mySqlConnection.Open();
                 mySqlDataReader = Command.ExecuteReader();
 
                 while (mySqlDataReader.Read())
                 {
                     toReturn[0] = mySqlDataReader.GetString(0);    // member names
-                    toReturn[2] = mySqlDataReader.GetString(1);    // team size
-                    studentRep = mySqlDataReader.GetString(2);  //  rep id
+                    toReturn[2] = mySqlDataReader.GetInt32(1).ToString();    // team size
+                    studentRep = mySqlDataReader.GetInt32(2).ToString();  //  rep id
                 }
 
                 mySqlDataReader.Close();
 
                 sqlQuery = "select school, grade from student where student_id =" + studentRep + ";";
-                Command = new MySqlCommand(sqlQuery, mySqlConnection);
+                Command = new SqlCommand(sqlQuery, mySqlConnection);
                 mySqlDataReader = Command.ExecuteReader();
 
                 while (mySqlDataReader.Read())

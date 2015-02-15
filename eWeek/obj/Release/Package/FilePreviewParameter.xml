@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="eweekak" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\YUJIAN\\Documents\\Visual\ Studio\ 2012\\Projects\\eWeek\\eWeek\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\YUJIAN\\Documents\\Visual\ Studio\ 2012\\Projects\\eWeek\\eWeek\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Server=127.0.0.1;Database=eweek;Uid=root;Pwd=Alaska898" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\YUJIAN\\Documents\\Visual\ Studio\ 2012\\Projects\\eWeek\\eWeek\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="eweekDb-Web.config Connection String" description="" value="Server=127.0.0.1;Database=eweek;Uid=root;Pwd=Alaska898" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\YUJIAN\\Documents\\Visual\ Studio\ 2012\\Projects\\eWeek\\eWeek\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='eweekDb']/@connectionString" />
+  </parameter>
+</parameters>

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 using ASPWenFormPractice1.CsLib;
-using MySql.Data.MySqlClient;
 
 namespace ASPWenFormPractice1
 {
@@ -99,7 +99,7 @@ namespace ASPWenFormPractice1
 
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(SqlTool.GetConnectionString());
+                SqlConnection SqlConnection = new SqlConnection(SqlTool.GetConnectionString());
 
                 string sqlQuery = "INSERT INTO paper_airplanes_report (participant_id, student_names, school," +
                     "grade_group, Plane_num, dist1_ft, dist1_in, offset1_ft, offset1_in, score1, " +
@@ -111,17 +111,17 @@ namespace ASPWenFormPractice1
                 this.TextBoxOffset2_ft.Text + "','" + this.TextBoxOffset2_in.Text + "','" + this.TextBoxScore2.Text + "','"
                 + this.TextBoxMaxDist.Text +"');";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
-                mySqlConnection.Open();
-                mySqlDataReader = Command.ExecuteReader();
+                SqlCommand Command = new SqlCommand(sqlQuery, SqlConnection);
+                SqlDataReader SqlDataReader;
+                SqlConnection.Open();
+                SqlDataReader = Command.ExecuteReader();
 
-                while (mySqlDataReader.Read())
+                while (SqlDataReader.Read())
                 {
                 }
 
-                mySqlDataReader.Dispose();
-                mySqlConnection.Close();
+                SqlDataReader.Dispose();
+                SqlConnection.Close();
 
                 this.LabelOutput.Text = "ID: " + this.TextBoxID.Text +
                     ", Your record was inserted.";
@@ -137,24 +137,24 @@ namespace ASPWenFormPractice1
             string[] toReturn = new string[4];
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(SqlTool.GetConnectionString());
+                SqlConnection SqlConnection = new SqlConnection(SqlTool.GetConnectionString());
 
                 string sqlQuery = "SELECT name, school, grade FROM student WHERE student_id =" + id + ";";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
-                mySqlConnection.Open();
-                mySqlDataReader = Command.ExecuteReader();
+                SqlCommand Command = new SqlCommand(sqlQuery, SqlConnection);
+                SqlDataReader SqlDataReader;
+                SqlConnection.Open();
+                SqlDataReader = Command.ExecuteReader();
 
-                while (mySqlDataReader.Read())
+                while (SqlDataReader.Read())
                 {
-                    toReturn[0] = mySqlDataReader.GetString(0);    //name
-                    toReturn[1] = mySqlDataReader.GetString(1);    //school
-                    toReturn[3] = mySqlDataReader.GetString(2);    //grade
+                    toReturn[0] = SqlDataReader.GetString(0);    //name
+                    toReturn[1] = SqlDataReader.GetString(1);    //school
+                    toReturn[3] = SqlDataReader.GetString(2);    //grade
                 }
 
-                mySqlDataReader.Dispose();
-                mySqlConnection.Close();
+                SqlDataReader.Dispose();
+                SqlConnection.Close();
 
             }
             catch (Exception ex)

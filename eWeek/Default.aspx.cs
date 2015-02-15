@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
+using ASPWenFormPractice1.CsLib;
 
 namespace ASPWenFormPractice1
 {
@@ -22,50 +23,14 @@ namespace ASPWenFormPractice1
 
         protected void Button_Student_reg(object sender, EventArgs e)
         {
-            try
-            {
-                MySqlConnection mySqlConnection = new MySqlConnection(GetConnectionString());
-
-                string sqlQuery = "INSERT INTO student (name, school, grade) VALUES " +
-                   "('" + this.TxtName.Text + "','" + this.TxtSchool.Text + "','" + this.TxtGrade.Text + "');";
-
-                string getIdQ = "SELECT LAST_INSERT_ID();";
-                string id = "";
-
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
-                mySqlConnection.Open();
-                mySqlDataReader = Command.ExecuteReader();
-
-                while (mySqlDataReader.Read())
-                {
-                }
-                mySqlDataReader.Close();
-
-                Command = new MySqlCommand(getIdQ, mySqlConnection);
-                mySqlDataReader = Command.ExecuteReader();
-
-                while (mySqlDataReader.Read())
-                {
-                    id = mySqlDataReader.GetString(0);  //get newly inserted student id
-                }
-                mySqlDataReader.Dispose();
-                mySqlConnection.Close();
-
-                this.Label_student_reg.Text = "Registered! " + this.TxtName.Text + ", your ID is "
-                    + id;
-            }
-            catch (Exception ex)
-            {
-                this.Label_student_reg.Text = ex.Message;
-            }
+            UaaEWeekDBController dbContrlr = new UaaEWeekDBController();
+            this.Label_output.Text = dbContrlr.InsertRecord("INSERT INTO student (name, school, grade) VALUES " +
+                   "('" + this.TextBox_name.Text + "','" + this.TextBox_school.Text + "','"
+                   + this.DropDownList_Grade.Text + "');", this.TextBox_name.Text);
+         
         }
 
-        public string GetConnectionString()
-        {
-            //sets the connection string from your web config file "ConnString" is the name of your Connection String
-            return System.Configuration.ConfigurationManager.ConnectionStrings["eweekDb"].ConnectionString;
-        }
+  
     }
 
 }

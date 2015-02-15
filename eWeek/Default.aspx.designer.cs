@@ -22,31 +22,31 @@ namespace ASPWenFormPractice1 {
         protected global::System.Web.UI.WebControls.Label Lable_intro;
         
         /// <summary>
-        /// TxtName control.
+        /// TextBox_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtName;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_name;
         
         /// <summary>
-        /// TxtSchool control.
+        /// TextBox_school control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtSchool;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_school;
         
         /// <summary>
-        /// TxtGrade control.
+        /// DropDownList_Grade control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TxtGrade;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Grade;
         
         /// <summary>
         /// Button_student_reg control.
@@ -58,12 +58,12 @@ namespace ASPWenFormPractice1 {
         protected global::System.Web.UI.WebControls.Button Button_student_reg;
         
         /// <summary>
-        /// Label_student_reg control.
+        /// Label_output control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_student_reg;
+        protected global::System.Web.UI.WebControls.Label Label_output;
     }
 }

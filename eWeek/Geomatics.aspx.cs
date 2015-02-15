@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 using ASPWenFormPractice1.CsLib;
-using MySql.Data.MySqlClient;
 
 namespace ASPWenFormPractice1
 {
@@ -65,15 +65,15 @@ namespace ASPWenFormPractice1
             
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(SqlTool.GetConnectionString());
+                SqlConnection mySqlConnection = new SqlConnection(SqlTool.GetConnectionString());
 
                 string sqlQuery = "INSERT INTO geomatics (participant_id, student_names, school," +
                     "grade_group, time_1, time_2, score) VALUES " +
                    "('" + this.TextBoxID.Text + "','" + info[0] + "','" + info[1] + "','" + info[3]
                 + "','" + this.TextBoxTime1.Text + "','" + this.TextBoxTime2.Text + "','" + score + "');";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
+                SqlCommand Command = new SqlCommand(sqlQuery, mySqlConnection);
+                SqlDataReader mySqlDataReader;
                 mySqlConnection.Open();
                 mySqlDataReader = Command.ExecuteReader();
 
@@ -98,12 +98,12 @@ namespace ASPWenFormPractice1
             string[] toReturn = new string[4];
             try
             {
-                MySqlConnection mySqlConnection = new MySqlConnection(SqlTool.GetConnectionString());
+                SqlConnection mySqlConnection = new SqlConnection(SqlTool.GetConnectionString());
 
                 string sqlQuery = "SELECT name, school, grade FROM student WHERE student_id =" + id + ";";
 
-                MySqlCommand Command = new MySqlCommand(sqlQuery, mySqlConnection);
-                MySqlDataReader mySqlDataReader;
+                SqlCommand Command = new SqlCommand(sqlQuery, mySqlConnection);
+                SqlDataReader mySqlDataReader;
                 mySqlConnection.Open();
                 mySqlDataReader = Command.ExecuteReader();
 
