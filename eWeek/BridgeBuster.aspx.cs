@@ -29,7 +29,7 @@ namespace ASPWenFormPractice1
                 return;
             }
 
-            if (idValue > 5000)
+            if (idValue >= 5000)
             {
                 // team
                 this.LabelEggDropOutput.Text = "ID has to be student ID";

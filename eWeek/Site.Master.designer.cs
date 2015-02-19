@@ -22,6 +22,15 @@ namespace ASPWenFormPractice1 {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
         
         /// <summary>
+        /// menuCss control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuCss;
+        
+        /// <summary>
         /// page_team control.
         /// </summary>
         /// <remarks>
@@ -40,13 +49,13 @@ namespace ASPWenFormPractice1 {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor page_events;
         
         /// <summary>
-        /// page_query control.
+        /// page_resuts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor page_query;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor page_resuts;
         
         /// <summary>
         /// page_reg control.

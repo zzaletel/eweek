@@ -36,7 +36,7 @@ namespace ASPWenFormPractice1
                 return;
             }
 
-            if (idValue > 5000)
+            if (idValue >= 5000)
             {
                 //get info from team table by id
                 info = this.getTeamInfoById(this.TextBoxID.Text);

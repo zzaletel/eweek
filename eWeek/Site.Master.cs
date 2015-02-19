@@ -70,10 +70,10 @@ namespace ASPWenFormPractice1
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 this.page_events.Visible = true;
-                this.page_query.Visible = true;
+                this.page_resuts.Visible = true;
                 this.page_team.Visible = true;
-                this.page_reg.Visible = true;
-            }
+                this.page_reg.Visible = true;                
+            }       
         }
     }
 }

@@ -30,39 +30,39 @@
     <h3>Events:</h3>
     <ol class="round">
         <li class="one">
-            Egg drop - team or individual
+            <a id="A1" runat="server" href="~/EggDrop">Egg drop - team or individual</a>
             <br /><br />
         </li>
         <li class="two">
-            Floatable moatables- team (up to 4 people)
+            <a id="A2" runat="server" href="~/FloatableMoatables">Floatable moatables- team (up to 4 people)</a>
             <br /><br />
         </li>
         <li class="three">
-            Paper airplanes - individual*
+            <a id="A3" runat="server" href="~/PaperAirplanes">Paper airplanes - individual</a>
             <br /><br />
         </li>
         <li class="four">
-            Egg toss - team or individual
+            <a id="A4" runat="server" href="~/EggToss">Egg toss - team or individual</a>
             <br /><br />
         </li>
         <li class="five">
-            Lego longo - team or individual
+            <a id="A5" runat="server" href="~/LegoLongo">Lego longo - team or individual</a>
             <br /><br />
         </li>
         <li class="six">
-            Shake & Break - team or individual
+            <a id="A6" runat="server" href="~/ShakeBreak">Shake & Break - team or individual</a>
             <br /><br />
         </li>
         <li class="seven">
-            Bridge buster - individual*
+            <a id="A7" runat="server" href="~/BridgeBuster">Bridge buster - individual</a>
             <br /><br />
         </li>
         <li class="eight">
-            Geomatics - individual*
+            <a id="A8" runat="server" href="~/Geomatics">Geomatics - individual</a>
             <br /><br />
         </li>
         <li class="nine">
-            Tower of Power - individual*
+            <a id="A9" runat="server" href="~/TowerOfPower">Tower of Power - individual</a>
             <br /><br />
         </li>
     </ol>

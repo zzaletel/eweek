@@ -1,4 +1,4 @@
-﻿<%@ Page visible="false" Title="Report Data Entry" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Events.aspx.cs" Inherits="ASPWenFormPractice1.WebForm2" %>
+﻿<%@ Page visible="false" Title="Event Data Entry" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EventsDataEntry.aspx.cs" Inherits="ASPWenFormPractice1.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">

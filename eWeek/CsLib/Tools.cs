@@ -72,5 +72,20 @@ namespace ASPWenFormPractice1.CsLib
             return toReturn;
         }
 
+        public static bool validate(string val) {
+            if (!val.Contains(":"))
+            {
+                return false;
+            }
+
+            int temp;
+            string[] Tokens = val.Split(':');
+            if (!Int32.TryParse(Tokens[0], out temp))
+            { return false; }
+            if (!Int32.TryParse(Tokens[1], out temp))
+            { return false; }
+
+            return true;
+        }
     }
 }

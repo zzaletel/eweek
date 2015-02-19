@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width" />
     <title></title>
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <style type="text/css" runat="server" id="menuCss">
+       #menu li a
+       { 
+     	   display: block;
+       }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">

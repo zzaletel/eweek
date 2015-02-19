@@ -23,6 +23,20 @@ namespace ASPWenFormPractice1
         {
             this.TextBoxTotalTime.Text = Tools.getDuration(this.TextBoxSTime.Text, this.TextBoxETime.Text);
 
+            //validations
+            double temp;
+            if (!Double.TryParse(TextBoxAllowedTime.Text, out temp))
+            {
+                this.LabelEggDropOutput.Text = "allowed time is not in a correct format (it should be time in minutes)";
+                return;
+            }
+            
+            if (!Tools.validate(TextBoxTotalTime.Text))
+            {
+                this.LabelEggDropOutput.Text = "total time is not in a correct format (should be xx:xx)";
+                return;
+            }
+
             if(Double.Parse(TextBoxAllowedTime.Text) <= Tools.getMinutes(TextBoxTotalTime.Text)){
                 this.TextBoxPDist.Text =
                     (Tools.getMinutes(TextBoxTotalTime.Text) - Double.Parse(TextBoxAllowedTime.Text)).ToString();
@@ -44,7 +58,7 @@ namespace ASPWenFormPractice1
                 return;
             }
           
-            if (idValue > 5000)
+            if (idValue >= 5000)
             {
                 //get info from team table by id
                 info = this.getTeamInfoById(this.TextBoxID.Text);

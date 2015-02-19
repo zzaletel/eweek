@@ -60,15 +60,11 @@ namespace ASPWenFormPractice1
                        "('" + this.TextTeamName.Text + "','" + allNames + "','" + teamSize + "','"
                        + teamRep + "');";
 
-                    Command = new SqlCommand(teamSqlQuery, mySqlConnection);        
-                    mySqlDataReader = Command.ExecuteReader();
+                    //Command = new SqlCommand(teamSqlQuery, mySqlConnection);        
+                    //Command.ExecuteNonQuery();
 
-                    while (mySqlDataReader.Read())
-                    {
-                    }
-                    mySqlDataReader.Close();
 
-                    Command = new SqlCommand(getIdQ, mySqlConnection);
+                    Command = new SqlCommand(teamSqlQuery + getIdQ, mySqlConnection); //insert + get new id
                     mySqlDataReader = Command.ExecuteReader();
 
                     while (mySqlDataReader.Read())
@@ -82,8 +78,7 @@ namespace ASPWenFormPractice1
                     {
                         getStudentNameSql += Int32.Parse(s) + ";";
                         Command = new SqlCommand(staSql + "('" + id + "','" + s + "');", mySqlConnection);
-                        mySqlDataReader = Command.ExecuteReader();
-                        mySqlDataReader.Close();
+                        Command.ExecuteNonQuery();
                     }
 
 

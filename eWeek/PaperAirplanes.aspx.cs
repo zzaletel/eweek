@@ -89,7 +89,7 @@ namespace ASPWenFormPractice1
                 this.LabelOutput.Text = "invaild ID";
                 return;
             }
-            if (id > 5000)
+            if (id >= 5000)
             {
                 this.LabelOutput.Text = "Participant ID has to be a student ID.";
                 return;

@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="eweekDb-Web.config Connection String" description="eweekDb Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-ASPWenFormPractice1-20141026192159;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-ASPWenFormPractice1-20141026192159.mdf" tags="SqlConnectionString">
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-ASPWenFormPractice1-20141026192159;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-ASPWenFormPractice1-20141026192159.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\YUJIAN\\Documents\\Visual\ Studio\ 2012\\Projects\\eWeek\\eWeek\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="eweekDb-Web.config Connection String" description="eweekDb Connection String used in web.config by the application to access the database." defaultValue="Data Source=localhost;Initial Catalog=uaa_eweek;Integrated Security=SSPI;" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\YUJIAN\\Documents\\Visual\ Studio\ 2012\\Projects\\eWeek\\eWeek\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='eweekDb']/@connectionString" />
-  </parameter>
-  <parameter name="eweekDb_local-Web.config Connection String" description="eweekDb_local Connection String used in web.config by the application to access the database." defaultValue="Data Source=localhost;Initial Catalog=uaa_eweek;Integrated Security=SSPI;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\YUJIAN\\Documents\\Visual\ Studio\ 2012\\Projects\\eWeek\\eWeek\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='eweekDb_local']/@connectionString" />
-  </parameter>
-  <parameter name="eweekDbmysql-Web.config Connection String" description="eweekDbmysql Connection String used in web.config by the application to access the database." defaultValue="Server=127.0.0.1;Database=eweek;Uid=root;Pwd=Alaska898;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\YUJIAN\\Documents\\Visual\ Studio\ 2012\\Projects\\eWeek\\eWeek\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='eweekDbmysql']/@connectionString" />
   </parameter>
 </parameters>

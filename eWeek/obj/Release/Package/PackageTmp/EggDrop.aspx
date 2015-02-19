@@ -28,11 +28,11 @@
         <td><asp:TextBox ID="TextBoxAllowedTime" runat="server"></asp:TextBox></td>
              </tr>
         <tr>
-        <td><asp:Label ID="Label4" runat="server" Text="Start Time"></asp:Label></td>
+        <td><asp:Label ID="Label4" runat="server" Text="Start Time (xx:xx)"></asp:Label></td>
         <td><asp:TextBox ID="TextBoxSTime" runat="server"></asp:TextBox></td>
              </tr>
         <tr>
-        <td><asp:Label ID="Label5" runat="server" Text="End Time"></asp:Label></td>
+        <td><asp:Label ID="Label5" runat="server" Text="End Time (xx:xx)"></asp:Label></td>
         <td><asp:TextBox ID="TextBoxETime" runat="server"></asp:TextBox></td>
              </tr>
         <tr>

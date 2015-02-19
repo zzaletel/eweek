@@ -12,6 +12,12 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <style type="text/css" runat="server" id="menuCss">
+       #menu li a
+       { 
+     	   display: inline-block;
+       }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -40,7 +46,9 @@
         <div class="content-wrapper">
             <div class="float-left">
                 <p class="site-title">
-                    <a runat="server" href="~/">your logo here</a>
+                    <a runat="server" href="~/">
+                        <img src="Images/eweekLogo.png" height="78" width="150" alt="eweekLogo.png" />
+                    </a>
                 </p>
             </div>
             <div class="float-right">
@@ -65,11 +73,9 @@
                     <ul id="menu">
                         <li><a runat="server" href="~/">Student Registration</a></li>
                         <li><a runat="server" id="page_team" visible="false" href="~/TeamRegistration">Team Registration</a></li>
-                        <li><a runat="server" id="page_events" visible="false" href="~/Events">Report Data Entry</a></li>
-                        <li><a runat="server" id="page_query" visible="false" href="~/Query">Query</a></li>
-                        <li><a runat="server" id="page_reg" visible="false" href="~/Account/Register">*Register Web User</a></li>
-                        <li><a runat="server" visible="false" href="~/About">About</a></li>
-                        <li><a runat="server" visible="false" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" id="page_events" visible="false" href="~/EventsDataEntry">Event Data Entry</a></li>
+                        <li><a runat="server" id="page_resuts" visible="false" href="~/EventResults">Event Results</a></li>
+                        <li><a runat="server" id="page_reg" visible="false" href="~/Account/Register">*Register Web User</a></li>                     
                     </ul>
                 </nav>
             </div>
