@@ -21,6 +21,39 @@ namespace ASPWenFormPractice1
 
         protected void ButtonCalculate_Click(object sender, EventArgs e)
         {
+            //popute allowed time
+            string[] info;
+            double idValue;
+            if (!Double.TryParse(this.TextBoxID.Text, out idValue))
+            {
+                this.LabelEggDropOutput.Text = "Invaild Id number!";
+                return;
+            }
+
+            if (idValue >= 5000)
+            {
+                //get info from team table by id
+                info = this.getTeamInfoById(this.TextBoxID.Text);
+            }
+            else
+            {
+                //get info from student table by id
+                info = this.getStudentInfoById(this.TextBoxID.Text);
+            }
+
+            if (info[3].Equals("1 to 3") || info[3].Equals("4 to 6"))
+            {
+                this.TextBoxAllowedTime.Text = "40";
+            }
+            else if (info[3].Equals("7 to 8") || info[3].Equals("9 to 12"))
+            {
+                this.TextBoxAllowedTime.Text = "20";
+            }
+            else {
+                this.TextBoxAllowedTime.Text = "error";
+            }
+
+            //get duration time
             this.TextBoxTotalTime.Text = Tools.getDuration(this.TextBoxSTime.Text, this.TextBoxETime.Text);
 
             //validations

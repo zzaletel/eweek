@@ -106,7 +106,7 @@ namespace ASPWenFormPractice1
                 SqlConnection.Close();
 
                 this.LabelOutput.Text = "ID: " + this.TextBoxID.Text +
-                    ", Your record was inserted.";
+                    ", Your record was inserted. Your total point is"+total_points;
             }
             catch (Exception ex)
             {

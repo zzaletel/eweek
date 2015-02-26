@@ -92,7 +92,7 @@ namespace ASPWenFormPractice1
                 mySqlConnection.Close();
 
                 this.LabelEggDropOutput.Text = "ID: " + this.TextBoxID.Text +
-                    ", Your record was inserted.";
+                    ", Your record was inserted. Your final ratio is " + ratio.ToString("#.##");
             }
             catch (Exception ex)
             {

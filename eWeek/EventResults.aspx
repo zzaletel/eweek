@@ -23,6 +23,7 @@
         <li><a id="A8" runat="server" href="~/StudentTable">Student</a></li>
         <li><a id="A9" runat="server" href="~/TeamTable">Team</a></li>
         <li><a id="A10" runat="server" href="~/TeamMembersTable">Team Member Details</a></li>
+        <li><a id="A11" runat="server" href="~/EventsStat">Events Status</a></li>
     </ul>
 
 

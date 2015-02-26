@@ -19,6 +19,10 @@ namespace ASPWenFormPractice1
                 this.Button_student_reg.Style["display"] = "";
                 this.Lable_intro.Style["display"] = "none";
             }
+            else
+            {
+                Response.Redirect("~/Account/Login");
+            }
         }
 
         protected void Button_Student_reg(object sender, EventArgs e)

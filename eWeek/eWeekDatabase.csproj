@@ -201,6 +201,7 @@
     <Content Include="EggDropReport.aspx" />
     <Content Include="EggToss.aspx" />
     <Content Include="EggTossReport.aspx" />
+    <Content Include="EventsStat.aspx" />
     <Content Include="FloatableMoatables.aspx" />
     <Content Include="FloatableMoatablesReport.aspx" />
     <Content Include="Geomatics.aspx" />
@@ -226,6 +227,7 @@
     <Content Include="LegoLongoReport.aspx" />
     <Content Include="packages.config" />
     <Content Include="EventsDataEntry.aspx" />
+    <None Include="Properties\PublishProfiles\eweek.pubxml" />
     <None Include="Properties\PublishProfiles\eweektest2.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="PaperAirplanes.aspx" />
@@ -385,6 +387,13 @@
     </Compile>
     <Compile Include="EggTossReport.aspx.designer.cs">
       <DependentUpon>EggTossReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventsStat.aspx.cs">
+      <DependentUpon>EventsStat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventsStat.aspx.designer.cs">
+      <DependentUpon>EventsStat.aspx</DependentUpon>
     </Compile>
     <Compile Include="FloatableMoatables.aspx.cs">
       <DependentUpon>FloatableMoatables.aspx</DependentUpon>

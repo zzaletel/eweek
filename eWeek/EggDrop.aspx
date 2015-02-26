@@ -25,7 +25,7 @@
              </tr>
         <tr>
         <td><asp:Label ID="Label3" runat="server" Text="Allowed Time(min)"></asp:Label></td>
-        <td><asp:TextBox ID="TextBoxAllowedTime" runat="server"></asp:TextBox></td>
+        <td><asp:TextBox ID="TextBoxAllowedTime" Text="To be calculated" runat="server"></asp:TextBox></td>
              </tr>
         <tr>
         <td><asp:Label ID="Label4" runat="server" Text="Start Time (xx:xx)"></asp:Label></td>

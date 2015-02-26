@@ -47,7 +47,7 @@
             <div class="float-left">
                 <p class="site-title">
                     <a runat="server" href="~/">
-                        <img src="Images/eweekLogo.png" height="78" width="150" alt="eweekLogo.png" />
+                        <img src="../Images/eweekLogo.png" height="78" width="150" alt="eweekLogo.png" />
                     </a>
                 </p>
             </div>

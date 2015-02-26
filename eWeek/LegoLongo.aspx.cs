@@ -122,7 +122,7 @@ namespace ASPWenFormPractice1
                 mySqlConnection.Close();
 
                 this.LabelOutput.Text = "ID: " + this.TextBoxID.Text +
-                    ", Your record was inserted.";
+                    ", Your record was inserted. Your max distance is " + max_dist;
             }
             catch (Exception ex)
             {
