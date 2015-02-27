@@ -63,6 +63,9 @@ namespace ASPWenFormPractice1
             else {
                 contest_mass = mass;
             }
+            //add size category
+            contest_mass += Double.Parse(this.DropDownListSizeCategory.SelectedValue);
+
             ratio = load / contest_mass;
 
             if (this.DropDownListPasses.SelectedValue != "Yes") {
@@ -74,9 +77,10 @@ namespace ASPWenFormPractice1
                 SqlConnection mySqlConnection = new SqlConnection(SqlTool.GetConnectionString());
 
                 string sqlQuery = "INSERT INTO bridge_buster_report (participant_id, student_name, school," +
-                    "grade_group, passes_inspection, mass, contest_mass, load_lb, ratio) VALUES " +
+                    "grade_group, passes_inspection, size_category, mass, contest_mass, load_lb, ratio) VALUES " +
                    "('" + this.TextBoxID.Text + "','" + info[0] + "','" + info[1] + "','" + info[3]
-                + "','" + this.DropDownListPasses.Text + "','" + this.TextBoxMass.Text + "','" + contest_mass.ToString("#.##")
+                + "','" + this.DropDownListPasses.Text + "','"+ this.DropDownListSizeCategory.SelectedValue
+                +"','" + this.TextBoxMass.Text + "','" + contest_mass.ToString("#.##")
                 + "','" + this.TextBoxLoad.Text + "','" + ratio.ToString("#.##") + "');";
                
                 SqlCommand Command = new SqlCommand(sqlQuery, mySqlConnection);

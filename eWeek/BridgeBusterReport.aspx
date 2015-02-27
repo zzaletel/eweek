@@ -22,6 +22,7 @@
             <asp:BoundField DataField="school" HeaderText="school" SortExpression="school" />
             <asp:BoundField DataField="grade_group" HeaderText="grade_group" SortExpression="grade_group" />
             <asp:BoundField DataField="passes_inspection" HeaderText="passes_inspection" SortExpression="passes_inspection" />
+            <asp:BoundField DataField="size_category" HeaderText="size_category" SortExpression="size_category" />
             <asp:BoundField DataField="mass" HeaderText="mass" SortExpression="mass" />
             <asp:BoundField DataField="contest_mass" HeaderText="contest_mass" SortExpression="contest_mass" />
             <asp:BoundField DataField="load_lb" HeaderText="load_lb" SortExpression="load_lb" />

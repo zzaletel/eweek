@@ -20,6 +20,15 @@
         </td>
         </tr>
         
+         <tr>
+        <td><asp:Label ID="Label5" runat="server" Text="Size Category"></asp:Label>&nbsp;&nbsp;
+            <asp:DropDownList ID="DropDownListSizeCategory" runat="server">
+                <asp:ListItem Text="50 g" Value="50"></asp:ListItem>
+                <asp:ListItem Text="150 g" Value="150"></asp:ListItem>
+            </asp:DropDownList>
+        </td>
+        </tr>
+
         <tr>
             <td><asp:Label ID="Label3" runat="server" Text="Mass (grams)"></asp:Label></td>
             <td><asp:TextBox ID="TextBoxMass" runat="server"></asp:TextBox></td>
