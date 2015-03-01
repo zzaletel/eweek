@@ -1,4 +1,4 @@
-﻿<%@ Page visible="false" Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LegoLongoReport.aspx.cs" Inherits="ASPWenFormPractice1.LegoLongoReport" %>
+﻿<%@ Page visible="false" Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LegoLongoReport.aspx.cs" Inherits="ASPWenFormPractice1.LegoLongoReport" EnableEventValidation="false"%>
 <script runat="server">
 
  private void OnRecordDeleted(object source, SqlDataSourceStatusEventArgs e)
@@ -13,7 +13,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Lego Longo Report</h2>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="record_id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="record_id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="record_id" HeaderText="record_id" InsertVisible="False" ReadOnly="True" SortExpression="record_id" />

@@ -1,4 +1,4 @@
-﻿<%@ Page visible="false" Title="Egg Drop Report" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EggDropReport.aspx.cs" Inherits="ASPWenFormPractice1.EggDropReport" %>
+﻿<%@ Page visible="false" Title="Egg Drop Report" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EggDropReport.aspx.cs" Inherits="ASPWenFormPractice1.EggDropReport" EnableEventValidation="false"%>
 <script runat="server">
 
  private void OnRecordDeleted(object source, SqlDataSourceStatusEventArgs e)
@@ -16,7 +16,7 @@
 
 
     
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="record_id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="record_id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="record_id" HeaderText="record_id" InsertVisible="False" ReadOnly="True" SortExpression="record_id" />

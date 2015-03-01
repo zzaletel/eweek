@@ -30,7 +30,7 @@ namespace ASPWenFormPractice1
             }
             Response.Clear();
             Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment;filename=geomatics_report.xls");
+            Response.AddHeader("content-disposition", "attachment;filename=geomatics_report.xlsx");
             Response.Charset = "";
             Response.ContentType = "application/vnd.ms-excel";
             using (StringWriter sw = new StringWriter())
