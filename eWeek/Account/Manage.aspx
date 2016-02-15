@@ -7,7 +7,7 @@
     </hgroup>
 
     <section id="passwordForm">
-        <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
+        <asp:PlaceHolder runat="server" ID="successMessage" Visible="True" ViewStateMode="Enabled">
             <p class="message-success"><%: SuccessMessage %></p>
         </asp:PlaceHolder>
 
