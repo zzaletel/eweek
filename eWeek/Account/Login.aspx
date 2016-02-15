@@ -34,10 +34,10 @@
                 </fieldset>
             </LayoutTemplate>
         </asp:Login>
-    <%--    <p>
-            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register</asp:HyperLink>
+        <p>
+            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Enabled">Register</asp:HyperLink>
             if you don't have an account.
-        </p>--%>
+        </p>
     </section>
 
 <%--    <section id="socialLoginForm">
